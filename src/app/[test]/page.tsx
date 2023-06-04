@@ -1,3 +1,11 @@
+'use client'
+
+import { notFound, usePathname } from 'next/navigation'
+
 export default function Test() {
-  return <h1>Test</h1>
+  const pathname = usePathname()
+
+  if (pathname === '/404') notFound()
+
+  return <h1>This is Dynamic Route Page</h1>
 }
